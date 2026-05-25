@@ -1,0 +1,6 @@
+{
+  "name": "Sent to Save",
+  "description": "Jesus was sent to save us. Now we are sent to share Him. A Gospel movement for everyone.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
