@@ -22,3 +22,18 @@ export interface Pathway {
   buttonText: string;
   targetPage: PageId;
 }
+
+export interface BookChapter {
+  chapterNumber: number;
+  title: string;
+  pages: string;
+  description: string;
+  excerpt: string;
+  insights: string[];
+}
+
+export interface BookPart {
+  partNumber: string;
+  title: string;
+  chapters: BookChapter[];
+}

@@ -108,7 +108,7 @@ export default function Footer({ setActivePage }: FooterProps) {
         <div className="footer-bottom border-t border-[#c8a84b]/10 pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-[#ffffff]/40">
           <p>© {currentYear} Sent to Save. All rights reserved. Made in faithful service to Jesus Christ.</p>
           <div className="social-links mt-4 sm:mt-0 flex gap-3">
-            <a href="mailto:info@senttosave.org" className="social-link" title="Email Us" referrerPolicy="no-referrer">
+            <a href="mailto:contact@senttosave.com" className="social-link" title="Email Us" referrerPolicy="no-referrer">
               <Mail className="w-4 h-4" />
             </a>
             <button onClick={() => handleNavigate('contact')} className="social-link" title="Prayer Request">

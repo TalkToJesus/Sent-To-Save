@@ -11,7 +11,7 @@ export default function PageHeader({ title, subtitle }: PageHeaderProps) {
       {/* Background radial glow */}
       <div className="absolute inset-x-0 top-0 h-64 bg-radial-gradient from-[#c8a84b]/10 to-transparent pointer-events-none blur-3xl" />
       
-      <div className="container relative z-10">
+      <div className="container mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}

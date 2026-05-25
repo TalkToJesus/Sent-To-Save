@@ -21,12 +21,12 @@ export default function Header({ activePage, setActivePage }: HeaderProps) {
 
   const menuItems: { id: PageId; label: string }[] = [
     { id: 'home', label: 'Home' },
-    { id: 'mission', label: 'Our Mission' },
-    { id: 'jesus', label: 'Who is Jesus?' },
+    { id: 'mission', label: 'Mission' },
+    { id: 'jesus', label: 'Jesus' },
     { id: 'salvation', label: 'Salvation' },
     { id: 'grow', label: 'Grow' },
     { id: 'book', label: 'The Book' },
-    { id: 'blog', label: 'Articles' },
+    { id: 'blog', label: 'Blog' },
     { id: 'contact', label: 'Contact' }
   ];
 
@@ -61,7 +61,7 @@ export default function Header({ activePage, setActivePage }: HeaderProps) {
                 <button
                   id={`nav-link-${item.id}`}
                   onClick={() => handleNavigate(item.id)}
-                  className={`nav-link ${activePage === item.id ? 'active font-bold text-[#c8a84b]' : ''}`}
+                  className={`nav-link uppercase tracking-[1.5px] font-ui ${activePage === item.id ? 'active font-bold text-[#c8a84b]' : ''}`}
                 >
                   {item.label}
                 </button>
@@ -69,8 +69,8 @@ export default function Header({ activePage, setActivePage }: HeaderProps) {
             ))}
           </ul>
 
-          <button id="nav-cta-action" onClick={() => handleNavigate('salvation')} className="nav-cta">
-            Receive Christ
+          <button id="nav-cta-action" onClick={() => handleNavigate('salvation')} className="nav-cta font-bold hover:bg-[#c8a84b] hover:text-[#0a0a06]">
+            START HERE
           </button>
 
           <button
@@ -126,7 +126,7 @@ export default function Header({ activePage, setActivePage }: HeaderProps) {
             onClick={() => handleNavigate('salvation')}
             className="nav-cta mt-6 w-full text-center font-bold bg-[#c8a84b] text-[#0a0a06] hover:bg-[#ffe082] transition-colors"
           >
-            Receive Christ
+            START HERE
           </button>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { BlogPost, Pillar, Pathway } from './types';
+import { BlogPost, Pillar, Pathway, BookPart } from './types';
 
 export const PILLARS: Pillar[] = [
   {
@@ -52,27 +52,27 @@ export const PATHWAYS: Pathway[] = [
 export const BLOG_POSTS: BlogPost[] = [
   {
     id: 'post-1',
-    category: 'Theology',
-    title: 'The Unbearable Weight of Grace',
-    excerpt: 'Explore the profound depth of Ephesians 2:8-9, uncovering how absolute unmerited favor destroys religious legalism and transforms the human heart.',
+    category: 'Testimony',
+    title: 'The Drive That Saved My Life',
+    excerpt: 'I am going to tell you something I do not say out loud very often. Not because it is hard to talk about — I have talked about it plenty. I tell it because someone reading this right now is sitting at their own version of that road, and they need to know what I know now: it was not the end. It was the beginning.',
     number: '01',
-    meta: 'June 18, 2026 • 5 Min Read'
+    meta: 'May 11, 2026 • 5 Min Read'
   },
   {
     id: 'post-2',
-    category: 'Evangelism',
-    title: 'Sharing Christ Without Fear',
-    excerpt: 'Practical, grace-filled methods for organic, non-combative faith conversations in an increasingly skeptical modern culture.',
+    category: 'Faith',
+    title: 'You Are Not Too Far Gone',
+    excerpt: 'I know the lie. It does not come loudly. It does not announce itself. It just settles in quietly, like carbon monoxide, you cannot smell it, but it is filling the room.',
     number: '02',
-    meta: 'May 20, 2026 • 7 Min Read'
+    meta: 'May 18, 2026 • 7 Min Read'
   },
   {
     id: 'post-3',
-    category: 'Discipleship',
-    title: 'The Lost Art of Deep Fellowship',
-    excerpt: 'Why superficial church attendance is not enough, and how to recover first-century, life-on-life communal spiritual growth.',
+    category: 'Gospel',
+    title: 'How to Share Jesus Without Being Weird About It',
+    excerpt: 'Most Christians I know want to share their faith. They genuinely do. They care about the people in their lives. They believe what they believe. They are not trying to keep it to themselves.',
     number: '03',
-    meta: 'April 12, 2026 • 6 Min Read'
+    meta: 'May 25, 2026 • 6 Min Read'
   }
 ];
 
@@ -145,10 +145,293 @@ export const GROW_STEPS = [
   }
 ];
 
-export const BOOK_CHAPTERS = [
-  { number: "Chapter 1", title: "The Great Sending", pages: "12-25", description: "Unpacking the absolute mission of Jesus as the archetype of our sending." },
-  { number: "Chapter 2", title: "The Weight of the Message", pages: "26-47", description: "Articulating the core Gospel with theological accuracy and grace-filled simplicity." },
-  { number: "Chapter 3", title: "The Bridge of Compassion", pages: "48-73", description: "Breaking down relational blockades to speak the truth in genuine sacrificial love." },
-  { number: "Chapter 4", title: "Romans Road Redux", pages: "74-99", description: "A detailed breakdown of the classic evangelistic tool for a post-secular audience." },
-  { number: "Chapter 5", title: "Multiply", pages: "100-128", description: "The calling of every believer to disciple someone else and create a legacy of faith." }
+export const BOOK_PARTS: BookPart[] = [
+  {
+    partNumber: 'Part I',
+    title: 'THE BATTLE WITHIN',
+    chapters: [
+      {
+        chapterNumber: 1,
+        title: 'The Standard of Manhood',
+        pages: '12-28',
+        description: 'Uncovering the true design of biblical masculinity and spiritual leadership.',
+        excerpt: 'Every man stands at a crossroad. The world demands performance and superficial strength, but Christ invites us to an inner transformation that starts with surrendering our control and confessing our need.',
+        insights: [
+          'The default setting of the human heart',
+          'How culture distorts spiritual strength',
+          'Walking in authentic humility'
+        ]
+      },
+      {
+        chapterNumber: 2,
+        title: 'The Enemy at the Gate',
+        pages: '29-44',
+        description: 'Identifying the spiritual forces and temptations aiming to derail your progress.',
+        excerpt: 'Spiritual warfare is not a myth; it is an active daily conflict. The enemy does not attack with fanfare, but with subtle compromises that erode your devotion and compromise your family\'s protection.',
+        insights: [
+          'Recognizing subtle hooks',
+          'The power of scripture in temptation',
+          'Alertness as a spiritual discipline'
+        ]
+      },
+      {
+        chapterNumber: 3,
+        title: 'The Sins of the Father',
+        pages: '45-58',
+        description: 'Breaking generational chains of failure and establishing a godly heritage.',
+        excerpt: 'We are shaped by those who walked before us, but we are not defined by their failures. Christ has given us the absolute authority to break generational cycles of anger, addiction, and neglect.',
+        insights: [
+          'The weight of spiritual inheritance',
+          'Repentance as a pathway to family healing',
+          'Forgiving and letting go'
+        ]
+      },
+      {
+        chapterNumber: 4,
+        title: 'Walking in Christ\'s Identity',
+        pages: '59-75',
+        description: 'Anchoring your worth and confidence in the secure, finished work of Jesus.',
+        excerpt: 'If you do not know who you are in Christ, you will spend your life trying to prove your worth. You are not defined by your failures or your successes; you are defined by His blood.',
+        insights: [
+          'The doctrine of active adoption',
+          'Rejecting the performance trap',
+          'Worship as identity defense'
+        ]
+      }
+    ]
+  },
+  {
+    partNumber: 'Part II',
+    title: 'MARRIAGE',
+    chapters: [
+      {
+        chapterNumber: 5,
+        title: 'Sacred Covenant',
+        pages: '78-94',
+        description: 'Rejecting modern disposable relationships to pursue a divine lifelong covenant.',
+        excerpt: 'Marriage is not a contract of convenience; it is a profound living covenant that mirrors Christ\'s sacrificial love for His church. When you commit, you lay down your life.',
+        insights: [
+          'The absolute permanence of covenant',
+          'Emulating Christ\'s sacrificial posture',
+          'Daily renewal of vows'
+        ]
+      },
+      {
+        chapterNumber: 6,
+        title: 'Dying to Self Daily',
+        pages: '95-108',
+        description: 'The practical path of setting aside ego to elevate and serve your spouse.',
+        excerpt: 'The primary battleground of marital peace is the ego. To love your wife is to crucify your selfishness every single day, preferring her flourishing over your comfort.',
+        insights: [
+          'The high cost of selfish isolation',
+          'Active communication as serving',
+          'Resolving conflict with grace'
+        ]
+      },
+      {
+        chapterNumber: 7,
+        title: 'The Spiritual Protector',
+        pages: '109-122',
+        description: 'Leading your marriage through spiritual stewardship, prayer, and protection.',
+        excerpt: 'A husband\'s highest calling is to stand as a spiritual watchman. You are called to wash your family in the word, pray over your home, and guard the spiritual atmosphere of your household.',
+        insights: [
+          'Establishing a family altar of prayer',
+          'Stewardship of the heart',
+          'Gentle spiritual leadership'
+        ]
+      },
+      {
+        chapterNumber: 8,
+        title: 'Restoration and Healing',
+        pages: '123-138',
+        description: 'Seeking reconciliation, covering wounds with grace, and renewing broken trust.',
+        excerpt: 'No marriage is too fractured for God\'s redemption. In Christ, old wounds do not define your future. True healing begins when we step out of defensive walls and step into radical forgiveness.',
+        insights: [
+          'The mechanics of genuine apology',
+          'Re-educating trust through consistency',
+          'The ministry of reconciliation'
+        ]
+      }
+    ]
+  },
+  {
+    partNumber: 'Part III',
+    title: 'FATHERHOOD',
+    chapters: [
+      {
+        chapterNumber: 9,
+        title: 'The Father\'s Legacy',
+        pages: '142-156',
+        description: 'Equipping children with spiritual boundaries, love, and unwavering presence.',
+        excerpt: 'Your children will learn what God is like by watching how you love them. You cannot outsource fatherhood to the church or the school; you are God\'s chosen representative in their lives.',
+        insights: [
+          'Validating children through presence',
+          'Discipline with perfect love',
+          'Modeling sincere discipleship'
+        ]
+      },
+      {
+        chapterNumber: 10,
+        title: 'Household Discipleship',
+        pages: '157-172',
+        description: 'Building a culture of discipleship where the Word is natural and lived.',
+        excerpt: 'Discipleship is not a Sunday lecture; it is a natural daily rhythm. It is found in how you talk when you sit in your house, when you walk along the road, and when you lie down.',
+        insights: [
+          'Organic faith discussions',
+          'Creating a high-grace household',
+          'The power of family prayer'
+        ]
+      },
+      {
+        chapterNumber: 11,
+        title: 'Raising Warriors for Christ',
+        pages: '173-188',
+        description: 'Training the next generation to stand firm and carry the Gospel into the culture.',
+        excerpt: 'We are not raising children to be comfortable; we are training spiritual warriors to stand strong against cultural tides. We equip them with truth, armor, and a vision of eternity.',
+        insights: [
+          'Shaping worldview through scripture',
+          'Teaching discernment and courage',
+          'Blessing and launching children'
+        ]
+      }
+    ]
+  },
+  {
+    partNumber: 'Part IV',
+    title: 'STRENGTH TO SURRENDER',
+    chapters: [
+      {
+        chapterNumber: 12,
+        title: 'Surrendering Your Will',
+        pages: '192-206',
+        description: 'Yielding control and plans to experience the true sovereignty of God.',
+        excerpt: 'True strength is not found in holding on, but in letting go. When you surrender your plans to the Father, you exchange your fragile strength for His infinite sovereignty.',
+        insights: [
+          'The peace of absolute surrender',
+          'Identifying modern idols',
+          'Trusting God with outcomes'
+        ]
+      },
+      {
+        chapterNumber: 13,
+        title: 'Strength in Weakness',
+        pages: '207-220',
+        description: 'Discovering how God\'s power is perfected in our acknowledged vulnerabilities.',
+        excerpt: 'Our brokenness is not an obstacle to God\'s work; it is the very conduit for His raw power. When we admit we are weak, He steps in as our supreme and absolute strength.',
+        insights: [
+          'The mystery of 2 Corinthians 12',
+          'Walking with healthy vulnerability',
+          'Humility as high dynamic power'
+        ]
+      },
+      {
+        chapterNumber: 14,
+        title: 'The Throne of Grace',
+        pages: '221-236',
+        description: 'Daily resting in the unmerited favor, mercy, and restorative power of Jesus.',
+        excerpt: 'You do not approach God on the basis of your performance. You approach Him on the basis of Christ\'s blood. His throne is not a seat of condemnation, but an abundant fountain of grace.',
+        insights: [
+          'Boldness in daily prayer',
+          'Remission of all condemnation',
+          'The ongoing care of the Spirit'
+        ]
+      }
+    ]
+  },
+  {
+    partNumber: 'Part V',
+    title: 'BATTLE PLAN',
+    chapters: [
+      {
+        chapterNumber: 15,
+        title: 'The Full Armor of God',
+        pages: '240-254',
+        description: 'Equipping your life with daily weapons of truth, righteousness, faith, and salvation.',
+        excerpt: 'You do not go to battle unprepared. Every morning, you must consciously equip yourself with the belt of truth, the breastplate of righteousness, and the shield of faith.',
+        insights: [
+          'The functional role of each piece of armor',
+          'Standing firm in cultural chaos',
+          'Guard rails for spiritual focus'
+        ]
+      },
+      {
+        chapterNumber: 16,
+        title: 'Dynamic Prayer Warfare',
+        pages: '255-268',
+        description: 'Interceding for your family and church with authority and persistence.',
+        excerpt: 'Prayer is not a passive wish list; it is a tactical weapon of spiritual warfare. It tears down persistent strongholds, heals families, and releases the movement of God\'s Spirit.',
+        insights: [
+          'The lifestyle of fasting and prayer',
+          'Persistent intercession techniques',
+          'Aligning prayers with scripture'
+        ]
+      },
+      {
+        chapterNumber: 17,
+        title: 'Band of Brothers',
+        pages: '269-284',
+        description: 'Building deep brotherhood for accountability, mutual support, and joint action.',
+        excerpt: 'An isolated man is a defeated man. You need a band of brothers who will stand with you in the heat of battle, tell you the truth when you are wrong, and lift you up when you fall.',
+        insights: [
+          'The absolute survival necessity of fellowship',
+          'Fostering mutual accountability',
+          'Sharing deep burdens safely'
+        ]
+      },
+      {
+        chapterNumber: 18,
+        title: 'Reclaiming Ground',
+        pages: '285-300',
+        description: 'Taking back stolen territory in your mind, habits, relationships, and legacy.',
+        excerpt: 'The enemy has stolen enough territory in our minds and families. Today, we draw a line in the dust. Through Christ, we reclaim our purity, our marriages, and our children.',
+        insights: [
+          'Revisiting broken commitments',
+          'Tearing down persistent habits',
+          'The authority of the believer'
+        ]
+      }
+    ]
+  },
+  {
+    partNumber: 'Part VI',
+    title: 'LEGACY',
+    chapters: [
+      {
+        chapterNumber: 19,
+        title: 'Finisher of the Faith',
+        pages: '304-318',
+        description: 'Walking with steady perseverance to complete the course God has assigned you.',
+        excerpt: 'Starting well is easy; finishing well is what matters. The calling of every disciple is to walk with absolute consistency until we see Him face-to-face and hear, \'Well done.\'',
+        insights: [
+          'Persevering through spiritual fatigue',
+          'Combating late-life compromises',
+          'Eyes fixed on the eternal crown'
+        ]
+      },
+      {
+        chapterNumber: 20,
+        title: 'Generating Disciples',
+        pages: '319-332',
+        description: 'Investing your life-on-life into reproduction, mentoring others in grace.',
+        excerpt: 'If your Christian walk ends with you, the line stops. Discipleship is a chain of multiplication. Find faithful men, invest your life in them, and teach them to do the same.',
+        insights: [
+          'The mechanics of lifegiving mentorship',
+          'Passing on core gospel conviction',
+          'Spiritual parenting as joy'
+        ]
+      },
+      {
+        chapterNumber: 21,
+        title: 'Sent to Save the Next Gen',
+        pages: '333-350',
+        description: 'Releasing a movement that outlives your life, transforming generations to come.',
+        excerpt: 'We are sent to save. Not just our own souls, but those whom God places in our path. This is our legacy: that the generation to come might know Him, and set their hope in God.',
+        insights: [
+          'Creating trans-generational legacy',
+          'The unstoppable power of the church',
+          'Final charge for sending'
+        ]
+      }
+    ]
+  }
 ];

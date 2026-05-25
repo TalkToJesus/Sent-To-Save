@@ -1,228 +1,226 @@
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import PageHeader from './PageHeader';
-import { Bookmark, Clipboard, Compass, Volume2, Star } from 'lucide-react';
-import { BOOK_CHAPTERS } from '../data';
+import React, { useState } from 'react';
+import { motion } from 'motion/react';
+import { Star } from 'lucide-react';
 
 export default function Book() {
-  const [selectedChapterIdx, setSelectedChapterIdx] = useState(0);
+  const [email, setEmail] = useState('');
+  const [submitted, setSubmitted] = useState(false);
 
-  const chapterPrevs = [
+  const handleNotifySubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (email.trim()) {
+      setSubmitted(true);
+      setEmail('');
+    }
+  };
+
+  const bookParts = [
     {
-      excerpt: "The archetypal model for of all discipleship begins with absolute dispatch. Just as the Father dispatched Jesus from local celestial throne to foreign dust, so Christ dispatches us. Understanding the Father's sending model is key to understanding our own.",
-      insights: [
-        "Inconceivable condescension: God coming to earth.",
-        "The incarnation as a model for relational empathy.",
-        "Breaking religious comfort grids in exchange for cross-carrying obedience."
-      ]
+      num: "I",
+      title: "THE BATTLE WITHIN",
+      desc: "Honest examination — the wounds, the lies, the dead end road, and the God who drove the rest of the way."
     },
     {
-      excerpt: "Many are eager to share but speak a distorted, diluted message of self-actualization. To represent the King, we must preach His solid truth: holiness, judgment, redemption, grace, and faith. Let the cross be as sharp and magnificent as the original.",
-      insights: [
-        "Defining raw biblical terms: sin, atonement, glorification.",
-        "Why self-help principles cannot substitute the historical blood of the Savior.",
-        "Preserving truth while flowing with absolute grace."
-      ]
+      num: "II",
+      title: "MARRIAGE",
+      desc: "Your wife needs more than a provider. False refuges. The secret war. Leadership through repentance."
     },
     {
-      excerpt: "Skeptics do not care how much you know until they see how much you love. We explore historical relational barriers and understand how Christ reached the Samaritan woman by identifying thirst, avoiding hostile debates, and seeking genuine salvation.",
-      insights: [
-        "Tactics for gentle, loving dialogue in highly secular environments.",
-        "The power of vulnerability: sharing your personal testimony.",
-        "Rejecting culture-war animosity to represent real unconditional love."
-      ]
+      num: "III",
+      title: "FATHERHOOD",
+      desc: "Be the hero your children are looking for. Teach them to pray. They are watching everything."
     },
     {
-      excerpt: "An in-depth modern analysis of the classic Romans Road technique. We learn how this structural scriptural sequence translates in modern dialogue. Keeping the structure intact but matching the tempo of our post-secular audience.",
-      insights: [
-        "Deconstructing Romans 3:23, 6:23, 5:8, 10:9 and 8:1.",
-        "How to respond dynamically to standard pushbacks and theological concerns.",
-        "Counseling seekers through the emotional weight of repentance."
-      ]
+      num: "IV",
+      title: "STRENGTH TO SURRENDER",
+      desc: "Every breakthrough came after surrender. Fighting from freedom, not for it. Christ already won."
     },
     {
-      excerpt: "Discipleship is a chain of multiplication. If your Christian life is not reproducing other faithful believers, the cycle is halted. We draft practical life-on-life mentorship goals to make you an effective spiritual parent.",
-      insights: [
-        "How to select and invest in someone with mentoring intentionality.",
-        "Setting spiritual goals (daily abiding, weekly study, prayer loops).",
-        "The glorious multiplier effect: building 2nd and 3rd Generation disciples."
-      ]
+      num: "V",
+      title: "BATTLE PLAN",
+      desc: "The armor of God. The After Action Review for daily life. Habits that compound over decades."
+    },
+    {
+      num: "VI",
+      title: "LEGACY",
+      desc: "Breaking the cycle. The home as first ministry. Hold the line — for the family God gave you."
     }
   ];
 
   return (
-    <div id="book-view">
-      <PageHeader
-        title="The Manifesto"
-        subtitle="Explore 'Sent to Save', an intimate blueprint for grace-filled disciplemaking."
-      />
+    <div id="book-view" className="bg-[#0a0a06] text-white selection:bg-[#c8a84b]/20 selection:text-[#ffffff]">
+      {/* SECTION 1: BOOK HERO */}
+      <section className="pt-36 pb-24 px-6 sm:px-12 md:px-24 bg-[#0a0a06]" id="book-hero">
+        <div className="container max-w-6xl mx-auto flex flex-col items-center">
+          
+          {/* Centered Pill COMING SOON */}
+          <div className="flex justify-center mb-6">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#c8a84b]/30 bg-[#c8a84b]/10 text-[#c8a84b] font-label text-[10px] tracking-[3px] uppercase">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#c8a84b] animate-pulse" />
+              COMING SOON
+            </span>
+          </div>
 
-      <section className="py-20 bg-[#0a0a06]" id="book-body">
-        <div className="container max-w-4xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start mb-20">
-            {/* Visual 3D CSS Cover card */}
-            <div className="flex justify-center md:sticky md:top-24">
+          {/* Centered Large Book Title */}
+          <h1 className="font-display font-black text-5xl sm:text-7xl md:text-[90px] uppercase tracking-wider text-white text-center leading-none mb-3">
+            HOLD THE LINE
+          </h1>
+
+          {/* Centered Subtitle */}
+          <p className="font-serif italic text-[#c8a84b] text-base sm:text-xl md:text-2xl text-center mb-16 max-w-3xl leading-relaxed">
+            A Christian Man's Battle Plan for Marriage, Fatherhood, and Faith
+          </p>
+
+          {/* 2-Column Cover and Text Details */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-start w-full mt-4">
+            
+            {/* Left: 3D Book Cover Card */}
+            <div className="flex justify-center md:justify-end xl:pr-8">
               <div className="book-cover">
-                <span className="book-cover-eyebrow">A Discipleship Manifesto</span>
+                {/* Book Spine Crease and shadow for photorealistic 3D rendering */}
+                <div className="absolute top-0 left-0 w-3.5 h-full bg-gradient-to-r from-black/45 via-white/5 to-transparent border-r border-white/5 mix-blend-overlay z-10 pointer-events-none" />
+
+                <span className="book-cover-eyebrow">A Christian Man's Battle Plan</span>
                 <span className="book-cover-hold text-center font-display uppercase tracking-widest text-4xl block mt-4">
-                  SENT
+                  HOLD
                 </span>
                 <div className="book-cover-the-wrap">
                   <div className="book-cover-the-rule" />
-                  <span className="book-cover-the uppercase tracking-[4px]">TO</span>
+                  <span className="book-cover-the uppercase tracking-[4px]">THE</span>
                   <div className="book-cover-the-rule r" />
                 </div>
                 <span className="book-cover-line text-center text-[#c8a84b] font-display uppercase tracking-widest text-5xl block">
-                  SAVE
+                  LINE
                 </span>
                 <div className="book-cover-rule" />
                 <span className="book-cover-author font-label text-[9px] text-[#ffffff]/60 uppercase tracking-[2px]">
-                  BY DAVID COOPER
+                  BY THOMAS CARVER
                 </span>
-
+ 
                 <div className="book-cover-bottom">
-                  <p className="book-cover-verse font-serif text-[8.5px] italic text-[#ffffff]/30 leading-snug">
-                    "Jesus said to them again, 'Peace be with you. As the Father has sent me, even so I am sending you.'"
+                  <p className="book-cover-verse font-serif text-[8.5px] italic text-[#ffffff]/30 leading-snug text-center">
+                    "Fight the good fight of faith."
                   </p>
                   <span className="book-cover-verse-ref font-label text-[6.5px] tracking-[1.5px] text-[#c8a84b]/40 uppercase block mt-1">
-                    — John 20:21
+                    — 1 TIMOTHY 6:12 · ESV
                   </span>
                 </div>
                 <span className="book-cover-imprint uppercase text-[#c8a84b]/40 text-[6px] tracking-[3px]">
-                  REVELATION PRESS
+                  SENT TO SAVE
                 </span>
               </div>
             </div>
 
-            {/* Book info text */}
-            <div className="space-y-6">
-              <div className="coming-soon-badge">
-                <Star className="w-4 h-4 fill-current text-[#c8a84b]" />
-                Interactive Chapter Explorer
-              </div>
-              <h2 className="font-display uppercase text-3xl text-[#ffffff] tracking-wide">
-                Rediscover The Commission
-              </h2>
-              <p className="subtitle font-serif italic text-[#c8a84b]">
-                "Sharing the Gospel is not the duty of professional clergy. It is the joy of the redeemed."
+            {/* Right: Narrative Details */}
+            <div className="space-y-6 text-left text-[#ffffff]/80 font-serif text-base sm:text-lg leading-relaxed max-w-xl md:pt-4">
+              <p>
+                He sat at the end of a dead end road, ready to end it all. A stranger on the phone found one bed at a VA hospital three and a half hours away. He made a promise to drive there. God drove him the rest of the way. The woman who checked him in is now his wife.
               </p>
-              <p className="p-body text-[#ffffff]/80">
-                In this volume, author David Cooper outlines a challenging, beautiful pathway for common believers to walk in obedience to the Great Commission. No dry legalism—only raw, biblical hospitality, relational empathy, theological clarity, and multiplication.
+              <p>
+                <span className="italic font-bold text-white">Hold the Line</span> is what happened after — and what is still happening. It is a raw, honest, Scripture-rooted battle plan written for husbands and fathers carrying battles nobody can see. PTSD. Pornography. Substance use. Marriage decay. The shame cycle that follows every failure. The slow, daily work of becoming the man your family actually needs.
+              </p>
+              <p className="mb-8">
+                Written from the trenches, not the pulpit. By a combat veteran in active recovery, not a polished expert. Theologically grounded. Practically structured. 21 chapters. Six parts. Every chapter ending in reflection, action, and prayer.
               </p>
 
-              <div className="gold-rule text-left m-0" />
-
-              <h4 className="font-label text-xs tracking-wider text-[#c8a84b] uppercase font-bold">Key Focus Areas:</h4>
-              <ul className="space-y-2.5 text-[#ffffff]/80 font-serif text-sm">
-                <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 bg-[#c8a84b] rounded-full" /> Recovering the First-Century sending model.
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 bg-[#c8a84b] rounded-full" /> Structuring clear, unmerited-favor Gospel dialogue.
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 bg-[#c8a84b] rounded-full" /> Walking with empathy, hospitality, and relational care.
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="gold-rule mb-16" />
-
-          {/* Interactive Chapter Previews Panel */}
-          <div className="bg-[#111108] border border-[#c8a84b]/15 rounded-lg p-6 sm:p-10 shadow-2xl" id="book-chapters-panel">
-            <span className="eyebrow block mb-2">Manifesto Blueprint</span>
-            <h3 className="font-display text-3xl uppercase text-[#ffffff] tracking-[1.5px] mb-6">
-              Interactive Table of Contents
-            </h3>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-              {/* Left Column: Chapters List selector */}
-              <div className="space-y-2 md:col-span-1">
-                {BOOK_CHAPTERS.map((chap, idx) => (
-                  <button
-                    key={chap.number}
-                    onClick={() => setSelectedChapterIdx(idx)}
-                    className={`w-full p-4 border rounded text-left transition-all duration-300 flex items-center justify-between ${
-                      selectedChapterIdx === idx
-                        ? 'bg-[#c8a84b] border-[#c8a84b] text-[#0a0a06] font-bold shadow-md shadow-[#c8a84b]/10'
-                        : 'bg-[#1a1a14] border-[#c8a84b]/15 text-[#ffffff]/80 hover:border-[#c8a84b]/50'
-                    }`}
-                  >
-                    <div>
-                      <span className={`block text-[10px] uppercase font-mono tracking-wider ${selectedChapterIdx === idx ? 'text-[#0a0a06]/60' : 'text-[#c8a84b]/60'}`}>
-                        {chap.number}
-                      </span>
-                      <span className="font-label text-sm uppercase truncate max-w-[140px] block mt-1">
-                        {chap.title}
-                      </span>
-                    </div>
-                    <span className="text-xs font-mono opacity-60">{chap.pages}</span>
-                  </button>
-                ))}
-              </div>
-
-              {/* Right Column: Previews display panel */}
-              <div className="md:col-span-2 bg-[#0a0a06]/55 border border-[#c8a84b]/10 rounded-lg p-6 sm:p-8 min-h-[300px]">
-                <AnimatePresence mode="wait">
+              {/* Notify form inline */}
+              <div className="pt-2">
+                {submitted ? (
                   <motion.div
-                    key={selectedChapterIdx}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    transition={{ duration: 0.3 }}
-                    className="space-y-6"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    className="p-4 bg-[#c8a84b]/10 border border-[#c8a84b]/30 rounded text-center sm:text-left text-[#c8a84b] font-label text-xs uppercase tracking-wider"
                   >
-                    <div>
-                      <span className="font-label text-[10px] tracking-widest text-[#c8a84b] uppercase font-bold">
-                        Chapter Summary & Draft Section
-                      </span>
-                      <h4 className="font-display text-4xl text-[#ffffff] uppercase tracking-wide mt-2">
-                        {BOOK_CHAPTERS[selectedChapterIdx].title}
-                      </h4>
-                      <p className="font-serif text-[#ffffff]/60 text-xs italic mt-1 pb-4 border-b border-[#c8a84b]/10">
-                        Page Range: {BOOK_CHAPTERS[selectedChapterIdx].pages}
-                      </p>
-                    </div>
-
-                    <div className="space-y-4">
-                      <div>
-                        <span className="block font-label text-[10px] uppercase tracking-wider text-[#ffffff]/40 mb-2">
-                          Primary Theme:
-                        </span>
-                        <p className="p-body text-sm text-[#ffffff]/90 leading-relaxed italic pl-4 border-l border-[#c8a84b]/30 font-serif">
-                          "{BOOK_CHAPTERS[selectedChapterIdx].description}"
-                        </p>
-                      </div>
-
-                      <div>
-                        <span className="block font-label text-[10px] uppercase tracking-wider text-[#ffffff]/40 mb-2">
-                          Excerpt Preview:
-                        </span>
-                        <p className="p-body text-[#ffffff]/80 text-sm leading-relaxed">
-                          {chapterPrevs[selectedChapterIdx].excerpt}
-                        </p>
-                      </div>
-
-                      <div>
-                        <span className="block font-label text-[10px] uppercase tracking-wider text-[#ffffff]/40 mb-3">
-                          Discipleship Insights Covered:
-                        </span>
-                        <ul className="space-y-2">
-                          {chapterPrevs[selectedChapterIdx].insights.map((insight, index) => (
-                            <li key={index} className="flex items-start gap-2 text-[#ffffff]/70 text-xs">
-                              <span className="w-1.5 h-1.5 rounded-full bg-[#c8a84b] mt-1.5 flex-shrink-0" />
-                              <span>{insight}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
+                    Grace and peace! You will be notified when the book releases.
                   </motion.div>
-                </AnimatePresence>
+                ) : (
+                  <form onSubmit={handleNotifySubmit} className="flex flex-col sm:flex-row gap-3 w-full">
+                    <input
+                      type="email"
+                      required
+                      placeholder="Notify me when available"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      className="flex-1 px-4 py-3.5 bg-[#111108] border border-[#c8a84b]/20 text-white rounded text-base placeholder-[#ffffff]/35 focus:outline-none focus:border-[#c8a84b] transition-colors"
+                    />
+                    <button
+                      type="submit"
+                      className="px-8 py-3.5 bg-gradient-to-r from-[#c8a84b] via-[#f0d080] to-[#c8a84b] text-[#0a0a06] font-label text-xs tracking-[2px] font-bold uppercase rounded hover:scale-[1.02] shadow-md transition-all active:scale-[0.98] cursor-pointer"
+                    >
+                      NOTIFY ME
+                    </button>
+                  </form>
+                )}
               </div>
             </div>
+
           </div>
+
+        </div>
+      </section>
+
+      {/* SECTION 2: WHAT'S INSIDE / SIX PARTS */}
+      <section className="py-36 bg-[#0a0a06] border-t border-[#c8a84b]/5 relative" id="book-parts">
+        <div className="container max-w-6xl mx-auto px-6">
+          
+          {/* Section Header */}
+          <div className="flex flex-col items-center text-center mb-12">
+            <span className="font-label text-xs sm:text-sm tracking-[4px] text-[#c8a84b] uppercase block mb-3 font-semibold">
+              WHAT'S INSIDE
+            </span>
+            <h2 className="font-display text-4xl sm:text-6xl text-white uppercase tracking-wider leading-none mb-6">
+              SIX PARTS. 21 CHAPTERS.
+            </h2>
+            <div className="w-24 h-[1.5px] bg-[#c8a84b] mx-auto mt-2" />
+          </div>
+ 
+          {/* Grid of the 6 centered Cards but with left-aligned contents */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-10">
+            {bookParts.map((part) => (
+              <div
+                key={part.num}
+                className="bg-[#111108]/90 border border-[#c8a84b]/10 rounded px-8 py-12 flex flex-col items-start text-left hover:border-[#c8a84b]/30 hover:bg-[#111108] hover:translate-y-[-2px] transition-all duration-300 shadow-xl w-full"
+              >
+                {/* Roman Numeral */}
+                <span className="font-serif text-[#c8a84b]/50 text-3xl sm:text-4xl block mb-3 tracking-wider select-none">
+                  {part.num}
+                </span>
+ 
+                {/* Card Title */}
+                <h3 className="font-display font-bold text-xl sm:text-2xl uppercase tracking-widest text-white mb-4 leading-tight">
+                  {part.title}
+                </h3>
+ 
+                {/* Card Description */}
+                <p className="font-serif text-sm sm:text-base leading-relaxed text-[#ffffff]/70">
+                  {part.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+ 
+        </div>
+      </section>
+ 
+      {/* SECTION 3: CENTERED QUOTE */}
+      <section className="py-36 bg-[#0a0a06] border-t border-[#c8a84b]/5 relative" id="book-quote">
+        <div className="container max-w-4xl mx-auto px-6 flex flex-col items-center text-center">
+          
+          {/* Centered Quote Marks in Gold */}
+          <span className="font-serif text-[#c8a84b]/30 text-[140px] leading-[0.3] select-none block mb-8 font-extrabold">
+            "
+          </span>
+
+          {/* Core Quote */}
+          <blockquote className="font-serif italic text-2xl sm:text-3xl md:text-4xl text-white tracking-wide leading-relaxed px-4">
+            You are not too far gone. You never were.
+          </blockquote>
+
+          {/* Ref */}
+          <span className="font-label text-xs sm:text-sm tracking-[4px] text-[#c8a84b] uppercase block mt-10 font-bold">
+            HOLD THE LINE &middot; CHAPTER 4
+          </span>
+
         </div>
       </section>
     </div>

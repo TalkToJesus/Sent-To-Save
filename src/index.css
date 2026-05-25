@@ -246,38 +246,52 @@ section { padding: 80px 0; position: relative; }
 @media (max-width: 900px) { .book-grid { grid-template-columns: 1fr; gap: 40px; } }
 .book-visual { display: flex; align-items: center; justify-content: center; perspective: 1400px; padding: 20px; }
 .book-cover {
-  width: 100%; max-width: 340px; aspect-ratio: 6/9;
-  background: linear-gradient(148deg, #1a1508 0%, #0d0d08 55%, #0a0a06 100%);
-  border-radius: 2px; position: relative;
-  transform: rotateY(-10deg) rotateX(3deg);
-  box-shadow: -16px 22px 50px rgba(0,0,0,0.75), 0 0 80px rgba(200,168,75,0.12);
-  display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
-  padding: 18px; overflow: hidden; transition: transform .6s ease;
+  width: 290px;
+  height: 435px;
+  flex-shrink: 0;
+  background: linear-gradient(148deg, #14140e 0%, #080805 55%, #040402 100%);
+  border-radius: 3px; position: relative;
+  transform: rotateY(-11deg) rotateX(3deg);
+  transform-style: preserve-3d;
+  box-shadow: -15px 18px 36px rgba(0,0,0,0.85), 0 0 60px rgba(200,168,75,0.06);
+  display: flex; flex-direction: column; align-items: center; justify-content: space-between;
+  padding: 30px 22px 22px; overflow: hidden; transition: transform .6s ease;
+  border: 1.5px solid rgba(200,168,75,0.2);
+}
+@media (max-width: 400px) {
+  .book-cover {
+    width: 250px;
+    height: 375px;
+    padding: 22px 16px 16px;
+  }
 }
 .book-cover:hover { transform: rotateY(-4deg) rotateX(1deg) scale(1.02); }
-.book-cover::before, .book-cover::after {
-  content: ''; position: absolute; left: 0; right: 0; height: 5px;
-  background: linear-gradient(90deg, transparent 0%, #6b4f10 5%, var(--gold) 30%, var(--gold-light) 50%, var(--gold) 70%, #6b4f10 95%, transparent 100%);
+/* Thin shining gold inner frame to match physical book borders */
+.book-cover::after {
+  content: ''; position: absolute;
+  top: 10px; left: 10px; right: 10px; bottom: 10px;
+  border: 1px solid rgba(200,168,75,0.3);
+  pointer-events: none;
+  z-index: 5;
 }
-.book-cover::before { top: 0; } .book-cover::after { bottom: 0; }
-.book-cover-eyebrow { font-family: var(--f-label); font-weight: 600; font-size: 7px; letter-spacing: 4px; color: var(--gold-muted); text-transform: uppercase; margin-top: 28px; margin-bottom: 14px; text-align: center; }
-.book-cover-hold, .book-cover-line { font-family: var(--f-display); font-size: clamp(64px, 11vw, 96px); line-height: 0.85; letter-spacing: 4px; color: var(--text); }
-.book-cover-the-wrap { display: flex; align-items: center; gap: 8px; margin: 4px 0; }
-.book-cover-the-rule { width: 36px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold-muted)); }
+.book-cover-eyebrow { font-family: var(--f-label); font-weight: 600; font-size: 7.5px; letter-spacing: 2px; color: var(--gold-muted); text-transform: uppercase; margin-top: 10px; margin-bottom: 20px; text-align: center; }
+.book-cover-hold, .book-cover-line { font-family: var(--f-display); font-size: clamp(34px, 5.5vw, 54px); line-height: 0.85; letter-spacing: 8px; color: #ffffff !important; text-align: center; width: 100%; display: block; }
+.book-cover-the-wrap { display: flex; align-items: center; justify-content: center; gap: 8px; margin: 4px 0; width: 100%; }
+.book-cover-the-rule { width: 32px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold-muted)); }
 .book-cover-the-rule.r { background: linear-gradient(90deg, var(--gold-muted), transparent); }
-.book-cover-the { font-family: var(--f-label); font-size: 10px; letter-spacing: 8px; color: var(--gold); }
-.book-cover-rule { width: 60%; height: 1px; background: rgba(200,168,75,0.4); margin: 12px 0 8px; }
-.book-cover-author { font-family: var(--f-label); font-weight: 400; font-size: 10px; letter-spacing: 4px; color: var(--gold-muted); }
-.book-cover-bottom { position: absolute; bottom: 38px; text-align: center; width: 100%; padding: 0 18px; }
-.book-cover-verse { font-family: var(--f-serif); font-style: italic; font-size: 10px; color: rgba(255,255,255,0.22); margin-bottom: 4px; }
-.book-cover-verse-ref { font-family: var(--f-label); font-size: 7px; letter-spacing: 3px; color: rgba(200,168,75,0.3); }
-.book-cover-imprint { position: absolute; bottom: 14px; font-family: var(--f-label); font-size: 7px; letter-spacing: 4px; color: rgba(200,168,75,0.35); text-align: center; width: 100%; }
+.book-cover-the { font-family: var(--f-label); font-size: 9px; letter-spacing: 4px; color: var(--gold-light); }
+.book-cover-rule { width: 50px; height: 1.5px; background: var(--gold-muted); margin: 20px auto 12px; }
+.book-cover-author { font-family: var(--f-label); font-weight: 500; font-size: 9px; letter-spacing: 3px; color: rgba(255,255,255,0.7); text-align: center; text-transform: uppercase; width: 100%; display: block; }
+.book-cover-bottom { text-align: center; width: 100%; display: flex; flex-direction: column; align-items: center; margin-bottom: 6px; }
+.book-cover-verse { font-family: var(--f-serif); font-style: italic; font-size: 8.5px; color: rgba(255,255,255,0.45); margin-bottom: 4px; max-width: 180px; line-height: 1.4; text-align: center; }
+.book-cover-verse-ref { font-family: var(--f-label); font-size: 6.5px; letter-spacing: 2.5px; color: var(--gold-muted); text-transform: uppercase; text-align: center; }
+.book-cover-imprint { font-family: var(--f-label); font-size: 7px; letter-spacing: 4px; color: rgba(200,168,75,0.45); text-align: center; width: 100%; text-transform: uppercase; margin-top: 4px; }
 
 .book-info h2 { font-family: var(--f-display); font-size: clamp(36px, 5.5vw, 64px); line-height: 0.95; letter-spacing: 2px; margin-bottom: 14px; }
 .book-info .subtitle { font-family: var(--f-serif); font-style: italic; font-size: clamp(18px, 2.4vw, 22px); color: var(--gold-light); margin-bottom: 28px; line-height: 1.4; }
 .book-info p { font-family: var(--f-body); font-size: 18px; line-height: 1.7; color: var(--text-soft); margin-bottom: 22px; }
 
-.coming-soon-badge { display: inline-flex; align-items: center; gap: 10px; padding: 10px 20px; background: rgba(200,168,75,0.08); border: 1px solid var(--gold); margin-bottom: 24px; font-family: var(--f-label); font-weight: 600; font-size: 11px; letter-spacing: 4px; color: var(--gold); text-transform: uppercase; border-radius: var(--radius); }
+.coming-soon-badge { display: inline-flex; align-items: center; gap: 10px; padding: 10px 20px; background: rgba(200,168,75,0.08); border: 1px solid var(--gold); margin-bottom: 32px; font-family: var(--f-label); font-weight: 600; font-size: 11px; letter-spacing: 4px; color: var(--gold); text-transform: uppercase; border-radius: var(--radius); }
 .coming-soon-dot { width: 8px; height: 8px; background: var(--gold); border-radius: 50%; animation: pulse-dot 2s ease infinite; box-shadow: 0 0 8px var(--gold); }
 @keyframes pulse-dot { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.3); } }
 
@@ -375,3 +389,149 @@ footer { background: var(--bg-deep); border-top: 1px solid var(--border); paddin
 /* ─── Reveal animations ─── */
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s ease; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ─── Screen general styles for Salvation Covenant Card ─── */
+#salvation-covenant-card .certificate-logo {
+  height: 48px !important;
+  max-height: 48px !important;
+  width: auto !important;
+  max-width: 240px !important;
+  object-fit: contain !important;
+  margin: 0 auto !important;
+}
+
+@media (max-width: 640px) {
+  #salvation-covenant-card .certificate-logo {
+    height: 38px !important;
+    max-height: 38px !important;
+    max-width: 180px !important;
+  }
+}
+
+/* ─── Printable Salvation Certificate ─── */
+@media print {
+  @page {
+    size: landscape;
+    margin: 0.5in;
+  }
+
+  /* Set document color mode to light for ink-friendly high contrast printing */
+  html, body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 11pt !important;
+  }
+
+  /* Hide absolutely everything else on the page */
+  #root > div > header,
+  header,
+  footer,
+  #app-header,
+  #app-footer,
+  #page-header,
+  nav,
+  .print-exclude,
+  .certificate-actions,
+  #salvation-body > div > *:not(#salvation-covenant-container),
+  #salvation-body .section-header,
+  #salvation-body p,
+  h1, h2, h3 {
+    display: none !important;
+  }
+
+  #salvation-covenant-container {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    float: none !important;
+  }
+
+  #salvation-covenant-card {
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 10.0in !important;
+    height: 6.8in !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    border: 8px double #a88932 !important;
+    background: #faf9f2 !important;
+    color: #111111 !important;
+    padding: 3rem !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    page-break-inside: avoid !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+  }
+
+  /* Force all certificate text to print high contrast dark colors */
+  #salvation-covenant-card * {
+    color: #111111 !important;
+    text-shadow: none !important;
+  }
+
+  /* Specific color adjustments for print */
+  #salvation-covenant-card .text-\\[\\#c8a84b\\] {
+    color: #92711d !important;
+  }
+  
+  #salvation-covenant-card .text-[#c8a84b] {
+    color: #92711d !important;
+  }
+  
+  #salvation-covenant-card .text-white\/60,
+  #salvation-covenant-card .text-[#ffffff]/60,
+  #salvation-covenant-card .text-slate-400 {
+    color: #444444 !important;
+  }
+
+  #salvation-covenant-card .certificate-logo {
+    height: 38pt !important;
+    max-height: 38pt !important;
+    width: auto !important;
+    max-width: 180pt !important;
+    margin: 0 auto 10pt auto !important;
+    display: block !important;
+    object-fit: contain !important;
+  }
+
+  #salvation-covenant-card h4 {
+    color: #0a0a06 !important;
+    font-size: 20pt !important;
+    text-align: center !important;
+    margin-top: 5pt !important;
+    margin-bottom: 2pt !important;
+  }
+
+  #salvation-covenant-card h5 {
+    color: #92711d !important;
+    border-bottom: 2px solid #a88932 !important;
+    background: none !important;
+    -webkit-text-fill-color: #92711d !important;
+    color: #92711d !important;
+    text-align: center !important;
+    font-size: 24pt !important;
+    line-height: 1.1 !important;
+    padding-bottom: 4pt !important;
+    margin: 8pt auto !important;
+    max-width: 80% !important;
+  }
+
+  /* Keep gold seal beautiful but visible */
+  #salvation-covenant-card .bg-gradient-to-br {
+    background: #f5e1a0 !important;
+    border: 2px solid #a88932 !important;
+  }
+}

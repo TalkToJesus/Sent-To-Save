@@ -20,9 +20,9 @@ export default function App() {
       case 'home':
         return <Home setActivePage={setActivePage} />;
       case 'mission':
-        return <Mission />;
+        return <Mission setActivePage={setActivePage} />;
       case 'jesus':
-        return <Jesus />;
+        return <Jesus setActivePage={setActivePage} />;
       case 'salvation':
         return <Salvation />;
       case 'grow':
@@ -44,7 +44,7 @@ export default function App() {
       <Header activePage={activePage} setActivePage={setActivePage} />
 
       {/* Main Container with Page Route Animations */}
-      <main className="flex-grow pt-[74px]">
+      <main className="flex-grow pt-[74px] w-full max-w-full overflow-hidden flex flex-col">
         <AnimatePresence mode="wait">
           <motion.div
             key={activePage}
@@ -52,6 +52,7 @@ export default function App() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -15 }}
             transition={{ duration: 0.45, ease: 'easeOut' }}
+            className="w-full flex-grow flex flex-col"
           >
             {renderActivePage()}
           </motion.div>

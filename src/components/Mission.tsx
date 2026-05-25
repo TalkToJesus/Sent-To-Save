@@ -1,97 +1,116 @@
-import { motion } from 'motion/react';
+import { PageId } from '../types';
 import PageHeader from './PageHeader';
-import { ShieldCheck, MessageSquarePlus, Flame, HeartHandshake } from 'lucide-react';
 
-export default function Mission() {
-  const values = [
-    {
-      icon: <Flame className="w-8 h-8 text-[#c8a84b]" />,
-      title: "1. Spirit-Led Devotion",
-      description: "Intellectual knowledge without the Holy Spirit is dry. We abide daily in the Counselor's guidance, letting Him direct opportunities, spark boldness, and heal broken hearts."
-    },
-    {
-      icon: <ShieldCheck className="w-8 h-8 text-[#c8a84b]" />,
-      title: "2. Biblically Centered Truth",
-      description: "Our foundation is timeless. We stand firmly on the inspired, inerrant Scriptures as our absolute benchmark for theology, life, relationships, and modern ministry."
-    },
-    {
-      icon: <MessageSquarePlus className="w-8 h-8 text-[#c8a84b]" />,
-      title: "3. Active Faith Multiplication",
-      description: "The Gospel is not meant to be safely hoarded. Disciples are called to produce disciplemakers. We dedicate ourselves to training believers to duplicate their faith in others."
-    },
-    {
-      icon: <HeartHandshake className="w-8 h-8 text-[#c8a84b]" />,
-      title: "4. Grace-Driven Relational Love",
-      description: "Jesus walked in absolute truth and absolute grace. We reject judgmental hostility, striving to meet skeptics, searchers, and broken souls with sacrificial love and complete empathy."
-    }
-  ];
+interface MissionProps {
+  setActivePage: (page: PageId) => void;
+}
 
+export default function Mission({ setActivePage }: MissionProps) {
   return (
-    <div id="mission-view">
+    <div id="mission-view" className="bg-[#0a0a06] text-white selection:bg-[#c8a84b]/20 selection:text-white">
       <PageHeader
-        title="Our Mission & Values"
+        title="Our Mission"
         subtitle="Jesus was sent to save us. Now we are sent to share Him."
       />
 
-      <section className="py-20 bg-[#0a0a06]" id="mission-body">
-        <div className="container max-w-4xl">
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="long-content"
-          >
-            {/* The Great Decree */}
-            <h2 className="text-center font-display uppercase tracking-[2px] mb-8 text-[#ffffff]">The Sovereign Intent</h2>
-            <p className="p-large text-[#ffffff]/80 text-center font-serif italic leading-relaxed mb-10 md:px-6">
-              "We do not exist to build massive, comfortable country-club churches. We exist to equip, fuel, and send ordinary saints into extraordinary harvest fields, carrying the message of eternal life."
+      <section className="py-36 bg-[#0a0a06]" id="mission-body">
+        <div className="container max-w-2xl mx-auto px-6 sm:px-8 flex flex-col items-center">
+          
+          {/* Centered Column with Left-aligned Introductory Paragraphs */}
+          <div className="space-y-8 text-left text-[#ffffff]/80 font-serif text-lg sm:text-xl leading-relaxed mb-36 max-w-xl mx-auto w-full">
+            <p>
+              Sent to Save exists because the Gospel was never meant to stay in our heads. It was meant to go out — into ordinary conversations, into broken homes, into the lives of people the world has written off but God has not.
             </p>
-            
-            <div className="gold-rule" />
-
-            <h3 className="uppercase tracking-[3px] text-[#c8a84b] mt-12 mb-4 font-bold">The Mission Declaration</h3>
-            <p className="p-body text-[#ffffff]/80">
-              To ignite a relational Gospel movement for everyone. We strive to proclaim the uncompromised salvation of Jesus Christ, disciple believers in first-century spiritual practices, and equip everyone to multiply faith with warm relational grace and scriptural depth.
+            <p>
+              This is a ministry for everyone. For men. For women. For families. For people who have been walking with Jesus for decades and for people who are still figuring out if any of this is real. Whoever you are — there is a place for you here.
             </p>
+          </div>
 
-            <h3 className="uppercase tracking-[3px] text-[#c8a84b] mt-10 mb-4 font-bold">The Multi-Cultural Vision</h3>
-            <p className="p-body text-[#ffffff]/80">
-              We envision a worldwide community of disciples who view themselves not as consumers of spiritual goods, but as divine ambassadors. We see a future where every home, workplace, and college becomes a satellite of God's redemption, sharing the peace of the cross with absolute confidence.
-            </p>
-
-            <blockquote>
-              "As you sent me into the world, so I have sent them into the world."
-              <cite>— John 17:18 (Our Lord's Prayer for the Brethren)</cite>
-            </blockquote>
-
-            <div className="gold-rule my-14" />
-
-            {/* Core Values Grid */}
-            <h2 className="text-center font-display uppercase tracking-[2px] mb-12 text-[#ffffff]">Core Pillars of Our Ministry</h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
-              {values.map((v, i) => (
-                <motion.div
-                  key={v.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.1 }}
-                  className="bg-[#111108] p-6 rounded-lg border border-[#c8a84b]/10 hover:border-[#c8a84b]/40 transition-colors flex flex-col items-center text-center"
-                >
-                  <div className="mb-4 bg-[#c8a84b]/5 p-3 rounded-full w-fit mx-auto">
-                    {v.icon}
-                  </div>
-                  <h4 className="font-label text-[#c8a84b] tracking-[2px] font-bold text-md mb-2 uppercase text-center w-full">
-                    {v.title}
-                  </h4>
-                  <p className="p-body text-[#ffffff]/70 text-sm leading-relaxed text-center">
-                    {v.description}
-                  </p>
-                </motion.div>
-              ))}
+          {/* WHAT WE BELIEVE */}
+          <div className="text-left mb-36 w-full max-w-xl mx-auto">
+            <h2 className="font-display uppercase tracking-widest text-3xl sm:text-4xl text-[#ffffff] mb-12 border-b border-[#c8a84b]/10 pb-8 text-center">
+              WHAT WE BELIEVE
+            </h2>
+            <div className="space-y-8 text-[#ffffff]/80 font-serif text-lg leading-relaxed text-left">
+              <p>
+                We believe Jesus Christ is the Son of God, fully God and fully man, who lived a sinless life, died on the cross for our sins, and rose again on the third day. We believe salvation is by grace through faith in Him alone — not by works, not by performance, not by becoming impressive enough.
+              </p>
+              <p>
+                We believe the Bible is the inerrant Word of God. We believe the Holy Spirit lives in every person who surrenders to Christ. We believe the Gospel is good news for everyone — without exception.
+              </p>
             </div>
-          </motion.div>
+          </div>
+
+          {/* HOW WE LIVE IT */}
+          <div className="text-left mb-36 w-full max-w-xl mx-auto">
+            <h2 className="font-display uppercase tracking-widest text-3xl sm:text-4xl text-[#ffffff] mb-12 border-b border-[#c8a84b]/10 pb-8 text-center">
+              HOW WE LIVE IT
+            </h2>
+            
+            <div className="space-y-16">
+              <div className="space-y-4">
+                <h3 className="font-label text-sm sm:text-base tracking-[3px] text-[#c8a84b] font-bold uppercase text-left">
+                  PRAY · CARE · SHARE
+                </h3>
+                <p className="text-[#ffffff]/80 font-serif text-base sm:text-lg leading-relaxed text-left">
+                  This is the simple framework we teach and try to live. Pray for the people God places in your life. Care for them practically and consistently. When the moment is right, share why you live the way you do. The Gospel travels on ordinary things when ordinary people are willing to carry it.
+                </p>
+              </div>
+
+              <div className="space-y-4">
+                <h3 className="font-label text-sm sm:text-base tracking-[3px] text-[#c8a84b] font-bold uppercase text-left">
+                  HONEST TESTIMONY
+                </h3>
+                <p className="text-[#ffffff]/80 font-serif text-base sm:text-lg leading-relaxed text-left">
+                  We do not perform Christianity. We live it openly — failures included. The book of Acts is full of broken people whom God used in spite of themselves. We are part of that lineage. Every person who has met Jesus has a story worth telling. Including yours.
+                </p>
+              </div>
+
+              <div className="space-y-4">
+                <h3 className="font-label text-sm sm:text-base tracking-[3px] text-[#c8a84b] font-bold uppercase text-left">
+                  EQUIPPING FOR THE LONG WALK
+                </h3>
+                <p className="text-[#ffffff]/80 font-serif text-base sm:text-lg leading-relaxed text-left">
+                  Saying yes to Jesus is the beginning, not the end. We exist to come alongside people as they grow — through resources, community, honest writing, and practical tools for everyday faith. Sanctification is the slow, daily work of becoming more like Christ. We are committed to walking it together.
+                </p>
+              </div>
+            </div>
+
+            {/* Accent Highlight Callout Box */}
+            <div className="border border-[#c8a84b]/20 py-10 px-6 my-14 bg-[#111108] rounded text-center max-w-lg mx-auto shadow-2xl">
+              <p className="font-serif italic text-xl sm:text-2xl text-[#c8a84b] leading-snug text-center">
+                "Jesus was sent to save us. Now we are sent to share Him."
+              </p>
+              <span className="font-label text-[10px] tracking-[2px] text-[#c8a84b]/60 uppercase mt-5 block text-center font-bold">
+                THE SENT TO SAVE MISSION
+              </span>
+            </div>
+          </div>
+
+          {/* WHO THIS IS FOR */}
+          <div className="text-left mb-36 w-full max-w-xl mx-auto">
+            <h2 className="font-display uppercase tracking-widest text-3xl sm:text-4xl text-[#ffffff] mb-12 border-b border-[#c8a84b]/10 pb-8 text-center">
+              WHO THIS IS FOR
+            </h2>
+            <div className="space-y-8 text-[#ffffff]/80 font-serif text-lg leading-relaxed text-left">
+              <p>
+                If you are curious about Jesus — this is for you. If you grew up in church and walked away — this is for you. If you have never read a Bible in your life — this is for you. If you have been walking with God for forty years and still feel like you are figuring it out — this is for you too.
+              </p>
+              <p>
+                Sent to Save is not a club for people who have it together. It is a movement for people who know they need Jesus.
+              </p>
+            </div>
+          </div>
+
+          {/* Bottom Callout Option Button */}
+          <div className="flex justify-center mt-6 mb-8">
+            <button
+              onClick={() => setActivePage('jesus')}
+              className="w-full sm:w-auto bg-gradient-to-r from-[#c8a84b] via-[#f0d080] to-[#c8a84b] text-[#0a0a06] font-label text-sm font-bold tracking-[3px] px-12 py-5 rounded transition-transform hover:scale-[1.03] duration-300 shadow-[0_4px_24px_rgba(200,168,75,0.22)] flex items-center justify-center hover:shadow-[0_4px_35px_rgba(200,168,75,0.38)] cursor-pointer"
+            >
+              MEET JESUS TODAY →
+            </button>
+          </div>
         </div>
       </section>
     </div>

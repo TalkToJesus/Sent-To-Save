@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import PageHeader from './PageHeader';
-import { CheckCircle2, Flame, MapPin, Mail, MessageSquarePlus } from 'lucide-react';
+import { Mail, ShieldCheck } from 'lucide-react';
 
 export default function Contact() {
   const [name, setName] = useState('');
@@ -26,145 +25,151 @@ export default function Contact() {
   };
 
   return (
-    <div id="contact-view">
-      <PageHeader
-        title="Fellowship & Prayer"
-        subtitle="Let us pray with you, answer your questions, and walk in faith together."
-      />
+    <div id="contact-view" className="bg-[#0a0a06] text-white selection:bg-[#c8a84b]/20 selection:text-white">
+      
+      {/* SECTION 1: CUSTOM CONTACT HEADER */}
+      <section className="pt-36 pb-20 px-6 sm:px-12 bg-[#0a0a06] text-center" id="contact-header">
+        <div className="max-w-4xl mx-auto flex flex-col items-center">
+          
+          <span className="font-label text-xs sm:text-sm tracking-[4px] text-[#c8a84b] uppercase block mb-3 font-semibold">
+            REACH OUT
+          </span>
+          
+          <h1 className="font-display font-black text-5xl sm:text-7xl uppercase tracking-wider text-white mb-4 leading-none text-center">
+            CONTACT
+          </h1>
 
-      <section className="py-20 bg-[#0a0a06]" id="contact-body">
-        <div className="container max-w-4xl">
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-12 items-start">
+          <p className="font-serif italic text-[#c8a84b]/95 text-base sm:text-lg md:text-xl text-center max-w-2xl leading-relaxed">
+            "If God prompted you to reach out — that is not an accident."
+          </p>
+          
+          <div className="w-20 h-[1.5px] bg-[#c8a84b]/30 mx-auto mt-10" />
+        </div>
+      </section>
+
+      {/* SECTION 2: DESCRIPTION TEXT & INTERACTIVE FORM */}
+      <section className="pt-16 pb-36 bg-[#0a0a06]" id="contact-body">
+        <div className="container max-w-xl mx-auto px-6 flex flex-col items-center">
+          
+          {/* Left-aligned narrative paragraphs with generous margin and padding, centered on the page */}
+          <div className="space-y-8 text-left text-[#ffffff]/80 font-serif text-base sm:text-lg leading-relaxed mb-24 max-w-lg w-full">
+            <p>
+              Whether you have a question, a prayer request, a testimony to share, or an invitation to speak — this is the place to start.
+            </p>
+            <p>
+              If you just gave your life to Christ on the Salvation page, please reach out. We want to know about it and connect you with a local church and resources to help you in your first steps.
+            </p>
+            <p>
+              If you are a publisher, agent, or media inquiry related to <span className="italic font-bold text-white">Hold the Line</span> — use this form. Reference "publishing" in the subject line.
+            </p>
+          </div>
+
+          {/* Clean Rounded Form Box conforming closely to Screenshot 3 */}
+          <div className="w-full bg-[#111108] border border-[#c8a84b]/15 rounded-lg p-6 sm:p-10 shadow-2xl relative">
+            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#c8a84b] to-transparent" />
             
-            {/* Info Column */}
-            <div className="md:col-span-2 space-y-6 flex flex-col items-center text-center">
-              <span className="eyebrow block text-center">Get In Touch</span>
-              <h2 className="font-display uppercase text-3xl text-[#ffffff] tracking-wide text-center">
-                We Are Here for You
-              </h2>
-              <p className="p-body text-[#ffffff]/80 text-sm leading-relaxed text-center">
-                We take prayer, mentorship, and biblical guidance seriously as brothers and sisters in Christ. Please, write to us with total transparency. Our team sets aside time every single day to pray over incoming requests.
-              </p>
-
-              <div className="w-16 h-px bg-[#c8a84b]/30 mx-auto" />
-
-              <div className="space-y-6 text-[#ffffff]/80 w-full flex flex-col items-center">
-                <div className="flex flex-col items-center text-center">
-                  <Mail className="w-6 h-6 text-[#c8a84b] mb-2" />
-                  <span className="block font-label text-[10px] tracking-wider text-[#c8a84b]/70 uppercase">Email Us Directly</span>
-                  <a href="mailto:info@senttosave.org" className="text-sm font-label font-bold text-[#ffffff] hover:text-[#c8a84b] transition-colors uppercase">
-                    info@senttosave.org
-                  </a>
-                </div>
-
-                <div className="flex flex-col items-center text-center max-w-sm">
-                  <Flame className="w-6 h-6 text-[#c8a84b] mb-2" />
-                  <span className="block font-label text-[10px] tracking-wider text-[#c8a84b]/70 uppercase">Prayer Group Mandate</span>
-                  <p className="text-xs italic font-serif leading-relaxed text-[#ffffff]/60 text-center">
-                    "Where two or three are gathered in my name, there am I among them." — Matthew 18:20
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Interactive Form Column */}
-            <div className="md:col-span-3 bg-[#111108] border border-[#c8a84b]/15 rounded-lg p-6 sm:p-8 shadow-2xl relative">
-              <div className="absolute top-0 right-10 w-20 h-1 bg-gradient-to-r from-transparent to-[#c8a84b]" />
-
-              {submitted ? (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  className="text-center py-10"
+            {submitted ? (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.98 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="text-center py-12"
+              >
+                <ShieldCheck className="w-16 h-16 text-[#c8a84b] mx-auto mb-6" />
+                <h3 className="font-label text-2xl text-white tracking-widest mb-3 uppercase font-bold">MESSAGE RECEIVED</h3>
+                <p className="font-serif italic text-[#ffffff]/80 text-base leading-relaxed mb-4 max-w-md mx-auto">
+                  "Grace and peace! We have set this dialogue aside for sincere response and prayerful focus."
+                </p>
+                <p className="font-label text-[11px] tracking-[1.5px] text-[#c8a84b] uppercase max-w-md mx-auto mb-8">
+                  We will reply to you from contact@senttosave.com
+                </p>
+                <button
+                  onClick={() => setSubmitted(false)}
+                  className="px-6 py-3 border border-[#c8a84b]/45 text-[#c8a84b] font-label text-[10px] tracking-wider uppercase bg-transparent rounded hover:bg-[#c8a84b]/10 transition-all font-bold cursor-pointer"
                 >
-                  <CheckCircle2 className="w-16 h-16 text-[#c8a84b] mx-auto mb-4" />
-                  <h3 className="font-label text-2xl text-[#ffffff] tracking-wider mb-2 uppercase">Grace & Peace!</h3>
-                  <p className="p-body text-[#ffffff]/80 text-md leading-relaxed mb-6 font-serif italic max-w-sm mx-auto">
-                    "Your message has been received. Our prayer intercessors and discipleship crew have set this aside for sincere prayer and response."
-                  </p>
-                  <button
-                    onClick={() => setSubmitted(false)}
-                    className="btn"
+                  Send Another Message
+                </button>
+              </motion.div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-6">
+                
+                {/* Name field */}
+                <div className="flex flex-col">
+                  <input
+                    type="text"
+                    required
+                    placeholder="Your name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    className="w-full px-5 py-4 bg-[#0a0a06] border border-[#c8a84b]/20 text-white rounded text-base placeholder-[#ffffff]/35 focus:outline-none focus:border-[#c8a84b] transition-colors"
+                  />
+                </div>
+
+                {/* Email field */}
+                <div className="flex flex-col">
+                  <input
+                    type="email"
+                    required
+                    placeholder="your.email@address.com"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="w-full px-5 py-4 bg-[#0a0a06] border border-[#c8a84b]/20 text-white rounded text-base placeholder-[#ffffff]/35 focus:outline-none focus:border-[#c8a84b] transition-colors"
+                  />
+                </div>
+
+                {/* Subject field dropdown */}
+                <div className="flex flex-col">
+                  <select
+                    value={subject}
+                    onChange={(e) => setSubject(e.target.value)}
+                    className="w-full px-5 py-4 bg-[#0a0a06] border border-[#c8a84b]/20 text-white rounded text-base focus:outline-none focus:border-[#c8a84b] transition-colors appearance-none cursor-pointer"
                   >
-                    Send Another Message
-                  </button>
-                </motion.div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-5">
-                  <div className="flex flex-col gap-1.5">
-                    <label htmlFor="contact-name" className="font-label text-[10px] tracking-[2.5px] uppercase text-[#c8a84b] font-bold">
-                      Your Full Name
-                    </label>
-                    <input
-                      type="text"
-                      id="contact-name"
-                      placeholder="e.g. Deborah Parker"
-                      value={name}
-                      onChange={(e) => setName(e.target.value)}
-                      required
-                      className="form-input focus:ring-1 focus:ring-[#c8a84b] focus:border-[#c8a84b]"
-                    />
-                  </div>
+                    <option value="Prayer Request">Prayer Request / Intercession</option>
+                    <option value="Theological Question">Theological / Bible Inquiry</option>
+                    <option value="Discipleship Support">Discipleship Guidance</option>
+                    <option value="Publishing Inquiry">Hold the Line / Publishing</option>
+                    <option value="General Conversation">General Conversation</option>
+                  </select>
+                </div>
 
-                  <div className="flex flex-col gap-1.5">
-                    <label htmlFor="contact-email" className="font-label text-[10px] tracking-[2.5px] uppercase text-[#c8a84b] font-bold">
-                      Your Email Address
-                    </label>
-                    <input
-                      type="email"
-                      id="contact-email"
-                      placeholder="e.g. deborah@believer.com"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      required
-                      className="form-input focus:ring-1 focus:ring-[#c8a84b] focus:border-[#c8a84b]"
-                    />
-                  </div>
+                {/* Message text area */}
+                <div className="flex flex-col">
+                  <textarea
+                    required
+                    placeholder="Your message"
+                    rows={6}
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    className="w-full px-5 py-4 bg-[#0a0a06] border border-[#c8a84b]/20 text-white rounded text-base placeholder-[#ffffff]/35 focus:outline-none focus:border-[#c8a84b] transition-colors resize-none"
+                  />
+                </div>
 
-                  <div className="flex flex-col gap-1.5">
-                    <label htmlFor="contact-subject" className="font-label text-[10px] tracking-[2.5px] uppercase text-[#c8a84b] font-bold">
-                      Subject Matter
-                    </label>
-                    <select
-                      id="contact-subject"
-                      value={subject}
-                      onChange={(e) => setSubject(e.target.value)}
-                      className="form-input bg-[#1a1a14] text-[#ffffff] focus:ring-1 focus:ring-[#c8a84b] focus:border-[#c8a84b]"
-                    >
-                      <option value="Prayer Request">Prayer Request / Intercession</option>
-                      <option value="Theological Question">Theological / Bible Inquiry</option>
-                      <option value="Discipleship Support">Discipleship Guidance</option>
-                      <option value="General Conversation">General Conversation</option>
-                    </select>
-                  </div>
-
-                  <div className="flex flex-col gap-1.5">
-                    <label htmlFor="contact-message" className="font-label text-[10px] tracking-[2.5px] uppercase text-[#c8a84b] font-bold">
-                      Your Sincere Message
-                    </label>
-                    <textarea
-                      id="contact-message"
-                      placeholder="Please write details about your prayer request or query..."
-                      value={message}
-                      onChange={(e) => setMessage(e.target.value)}
-                      required
-                      className="form-textarea min-h-[160px] focus:ring-1 focus:ring-[#c8a84b] focus:border-[#c8a84b]"
-                    />
-                  </div>
-
+                {/* Submit button with golden gradient background */}
+                <div className="pt-2">
                   <button
                     type="submit"
                     disabled={submitting}
-                    className="btn btn-primary w-full mt-2"
+                    className="w-full sm:w-auto px-10 py-4 bg-gradient-to-r from-[#c8a84b] via-[#f0d080] to-[#c8a84b] text-[#0a0a06] font-label text-xs tracking-[2px] font-bold uppercase rounded hover:scale-[1.02] shadow-lg transition-transform active:scale-[0.98] cursor-pointer"
                   >
-                    {submitting ? 'Submitting request...' : 'Send Message to Brethren'}
+                    {submitting ? 'SENDING...' : 'SEND MESSAGE →'}
                   </button>
-                </form>
-              )}
-            </div>
+                </div>
+
+              </form>
+            )}
           </div>
+
+          {/* Email fallback section with direct contact */}
+          <div className="mt-16 text-center space-y-3">
+            <Mail className="w-5 h-5 text-[#c8a84b] mx-auto" />
+            <p className="font-label text-[10px] tracking-[2.5px] uppercase text-[#ffffff]/30">Or direct email</p>
+            <a href="mailto:contact@senttosave.com" className="block text-sm font-label tracking-wider font-bold text-white hover:text-[#c8a84b] transition-colors">
+              CONTACT@SENTTOSAVE.COM
+            </a>
+          </div>
+
         </div>
       </section>
+
     </div>
   );
 }
