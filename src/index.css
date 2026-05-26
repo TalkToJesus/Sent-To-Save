@@ -60,7 +60,14 @@ a:hover { color: var(--gold-light); }
 img { max-width: 100%; display: block; height: auto; }
 button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
 
-.container { max-width: var(--container); margin: 0 auto; padding: 0 var(--gutter); }
+.container {
+  width: 100% !important;
+  max-width: var(--container);
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: var(--gutter) !important;
+  padding-right: var(--gutter) !important;
+}
 
 @media (max-width: 640px) {
   body { font-size: 17px; }
@@ -109,7 +116,17 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   border-bottom: 1px solid var(--border);
   z-index: 100; transition: background .3s;
 }
-.nav-inner { max-width: var(--container); margin: 0 auto; padding: 14px var(--gutter); display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.nav-inner {
+  width: 100% !important;
+  max-width: var(--container) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding: 14px var(--gutter);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
 .nav-logo { display: flex; align-items: center; text-decoration: none; cursor: pointer; flex-shrink: 0; }
 .nav-logo img { height: 44px; width: auto; filter: drop-shadow(0 0 8px rgba(200,168,75,0.3)); }
 
@@ -158,8 +175,116 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 /* ─── Page sections ─── */
 .page { display: none; padding-top: 76px; }
 .page.active { display: block; }
-section { padding: 80px 0; position: relative; }
-@media (max-width: 640px) { section { padding: 60px 0; } }
+
+/* Fixed navbar top-padding offset for the main viewport */
+main {
+  padding-top: 76px !important;
+}
+@media (max-width: 640px) {
+  main {
+    padding-top: 68px !important;
+  }
+}
+
+/* Base interior sections top/bottom padding constraints */
+section:not(.hero):not(#book-hero):not(#contact-header) {
+  padding-top: 60px !important;
+  padding-bottom: 110px !important;
+  position: relative;
+}
+@media (max-width: 640px) {
+  section:not(.hero):not(#book-hero):not(#contact-header) {
+    padding-top: 40px !important;
+    padding-bottom: 70px !important;
+  }
+}
+
+/* Helper sibling spacing rules for consistent and highly robust layout rhythm */
+.space-y-4 > * + * {
+  margin-top: 16px !important;
+}
+.space-y-6 > * + * {
+  margin-top: 24px !important;
+}
+.space-y-8 > * + * {
+  margin-top: 32px !important;
+}
+.space-y-12 > * + * {
+  margin-top: 48px !important;
+}
+.space-y-16 > * + * {
+  margin-top: 64px !important;
+}
+
+/* Bulletproof spacing resets for text-blocks, subheadings, and paragraphs inside sub-views */
+#mission-body h2,
+#jesus-body h2,
+#salvation-body h2,
+#grow-body h2,
+.long-content h2 {
+  font-family: var(--f-display);
+  font-size: clamp(34px, 5.5vw, 48px) !important;
+  letter-spacing: 2.5px !important;
+  margin-top: 32px !important; /* Elegant 32px top margin to match the bottom style */
+  margin-bottom: 32px !important; /* Spacious margin after inner section headlines */
+  line-height: 1.25 !important;
+  text-align: center !important;
+  display: block !important;
+  width: 100%;
+}
+
+@media (max-width: 640px) {
+  #mission-body h2,
+  #jesus-body h2,
+  #salvation-body h2,
+  #grow-body h2,
+  .long-content h2 {
+    margin-top: 24px !important;
+    margin-bottom: 24px !important;
+  }
+}
+
+/* Beautiful line heights and custom paragraph spacing */
+#mission-body p,
+#jesus-body p,
+#salvation-body p,
+#grow-body p,
+.long-content p {
+  margin-top: 0 !important;
+  margin-bottom: 24px !important; /* Safe separation of paragraphs inside pages */
+  line-height: 1.8 !important;
+}
+
+#mission-body h3,
+#jesus-body h3,
+#salvation-body h3,
+#grow-body h3,
+.long-content h3 {
+  margin-top: 40px !important;
+  margin-bottom: 14px !important;
+  letter-spacing: 3px !important;
+}
+
+/* Ensure proper distances between major thematic containers/divs */
+#mission-body .mb-36,
+#jesus-body .mb-36,
+#salvation-body .mb-36,
+#grow-body .mb-36 {
+  margin-bottom: 110px !important;
+}
+#salvation-body .mb-32 {
+  margin-bottom: 110px !important;
+}
+
+@media (max-width: 640px) {
+  #mission-body .mb-36,
+  #jesus-body .mb-36,
+  #salvation-body .mb-36,
+  #grow-body .mb-36,
+  #salvation-body .mb-32 {
+    margin-bottom: 80px !important;
+  }
+}
 
 /* ─── Hero ─── */
 .hero { min-height: calc(100vh - 76px); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; padding: 60px 0; }
@@ -203,8 +328,21 @@ section { padding: 80px 0; position: relative; }
 @media (max-width: 640px) { .hero-scroll { display: none; } }
 
 /* ─── Section headers ─── */
-.section-header { text-align: center; margin-bottom: 56px; }
-.section-header .p-large { max-width: 720px; margin: 0 auto; }
+.section-header {
+  text-align: center;
+  margin-bottom: 56px;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.section-header .p-large {
+  max-width: 720px;
+  margin: 0 auto !important;
+  text-align: center !important;
+}
 
 /* ─── Pillars ─── */
 .pillars { background: linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-mid) 100%); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
@@ -319,9 +457,31 @@ section { padding: 80px 0; position: relative; }
 .newsletter-form input::placeholder { color: var(--text-mute); }
 
 /* ─── Page hero (inner pages) ─── */
-.page-hero { padding: 72px 0 60px; text-align: center; background: linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-mid) 100%); border-bottom: 1px solid var(--border); }
+.page-hero, #book-hero, #contact-header {
+  padding-top: 150px !important; /* Spacious offset from fixed top navbar */
+  padding-bottom: 90px !important;
+  text-align: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-mid) 100%);
+  border-bottom: 1px solid var(--border);
+}
+@media (max-width: 640px) {
+  .page-hero, #book-hero, #contact-header {
+    padding-top: 110px !important;
+    padding-bottom: 70px !important;
+  }
+}
+.page-hero h1, #book-hero h1, #contact-header h1, .page-hero .subtitle, #book-hero p, #contact-header p, .page-hero .gold-rule, #book-hero .gold-rule, #contact-header .gold-rule {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: block !important;
+}
 .page-hero h1 { font-family: var(--f-display); font-size: clamp(44px, 8vw, 88px); line-height: 0.95; letter-spacing: 3px; margin-bottom: 14px; }
-.page-hero .subtitle { font-family: var(--f-serif); font-style: italic; font-size: clamp(18px, 2.4vw, 22px); color: var(--gold-light); max-width: 720px; margin: 0 auto; padding: 0 var(--gutter); line-height: 1.4; }
+.page-hero .subtitle { font-family: var(--f-serif); font-style: italic; font-size: clamp(18px, 2.4vw, 22px); color: var(--gold-light); max-width: 720px; padding: 0 var(--gutter); line-height: 1.4; }
 
 .long-content { max-width: 780px; margin: 0 auto; padding: 0 var(--gutter); text-align: center; }
 .long-content h2 { font-family: var(--f-display); font-size: clamp(32px, 5vw, 44px); letter-spacing: 2px; margin: 56px 0 20px; color: var(--text); text-align: center; }
@@ -392,19 +552,19 @@ footer { background: var(--bg-deep); border-top: 1px solid var(--border); paddin
 
 /* ─── Screen general styles for Salvation Covenant Card ─── */
 #salvation-covenant-card .certificate-logo {
-  height: 48px !important;
-  max-height: 48px !important;
+  height: 36px !important;
+  max-height: 36px !important;
   width: auto !important;
-  max-width: 240px !important;
+  max-width: 180px !important;
   object-fit: contain !important;
   margin: 0 auto !important;
 }
 
 @media (max-width: 640px) {
   #salvation-covenant-card .certificate-logo {
-    height: 38px !important;
-    max-height: 38px !important;
-    max-width: 180px !important;
+    height: 30px !important;
+    max-height: 30px !important;
+    max-width: 140px !important;
   }
 }
 
@@ -459,7 +619,7 @@ footer { background: var(--bg-deep); border-top: 1px solid var(--border); paddin
     position: absolute !important;
     left: 50% !important;
     top: 50% !important;
-    transform: translate(-50%, -50%) !important;
+    transform: translate(-50% , -50%) !important;
     width: 10.0in !important;
     height: 6.8in !important;
     max-width: 100% !important;
@@ -467,13 +627,15 @@ footer { background: var(--bg-deep); border-top: 1px solid var(--border); paddin
     border: 8px double #a88932 !important;
     background: #faf9f2 !important;
     color: #111111 !important;
-    padding: 3rem !important;
+    padding: 2.2rem !important;
     border-radius: 0 !important;
     box-shadow: none !important;
     page-break-inside: avoid !important;
     display: flex !important;
     flex-direction: column !important;
     justify-content: space-between !important;
+    align-items: center !important;
+    text-align: center !important;
   }
 
   /* Force all certificate text to print high contrast dark colors */
@@ -498,21 +660,21 @@ footer { background: var(--bg-deep); border-top: 1px solid var(--border); paddin
   }
 
   #salvation-covenant-card .certificate-logo {
-    height: 38pt !important;
-    max-height: 38pt !important;
+    height: 28pt !important;
+    max-height: 28pt !important;
     width: auto !important;
-    max-width: 180pt !important;
-    margin: 0 auto 10pt auto !important;
+    max-width: 150pt !important;
+    margin: 0 auto 5pt auto !important;
     display: block !important;
     object-fit: contain !important;
   }
 
   #salvation-covenant-card h4 {
     color: #0a0a06 !important;
-    font-size: 20pt !important;
+    font-size: 16pt !important;
     text-align: center !important;
-    margin-top: 5pt !important;
-    margin-bottom: 2pt !important;
+    margin-top: 3pt !important;
+    margin-bottom: 1pt !important;
   }
 
   #salvation-covenant-card h5 {
@@ -522,10 +684,10 @@ footer { background: var(--bg-deep); border-top: 1px solid var(--border); paddin
     -webkit-text-fill-color: #92711d !important;
     color: #92711d !important;
     text-align: center !important;
-    font-size: 24pt !important;
+    font-size: 20pt !important;
     line-height: 1.1 !important;
-    padding-bottom: 4pt !important;
-    margin: 8pt auto !important;
+    padding-bottom: 3pt !important;
+    margin: 6pt auto !important;
     max-width: 80% !important;
   }
 

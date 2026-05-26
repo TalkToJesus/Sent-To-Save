@@ -138,7 +138,7 @@ export default function Home({ setActivePage }: HomeProps) {
       {/* ─── THREE SIMPLE CALLS ─── */}
       <section className="pillars py-36 border-t border-[#c8a84b]/10 bg-[#0a0a06]" id="home-pillars">
         <div className="container mx-auto px-6">
-          <div className="section-header text-center max-w-4xl mx-auto mb-20 flex flex-col items-center">
+          <div className="section-header text-center max-w-4xl mx-auto mb-20">
             <span className="eyebrow text-[#c8a84b]/60 tracking-[4px] block mb-2 uppercase text-xs">A GOSPEL MOVEMENT</span>
             <h2 className="font-display uppercase text-5xl sm:text-6xl text-[#ffffff] tracking-[1px] text-center mb-6">THREE SIMPLE CALLS</h2>
             <div className="gold-rule mx-auto my-3 w-28" />
@@ -211,7 +211,7 @@ export default function Home({ setActivePage }: HomeProps) {
       {/* ─── START WHERE YOU ARE / FIND YOUR NEXT STEP ─── */}
       <section className="pathways py-36 bg-[#111108]" id="home-pathways">
         <div className="container mx-auto px-6">
-          <div className="section-header text-center max-w-3xl mx-auto mb-20 flex flex-col items-center">
+          <div className="section-header text-center max-w-3xl mx-auto mb-20">
             <span className="eyebrow text-[#c8a84b]/60 tracking-[4px] block mb-2 uppercase text-xs">START WHERE YOU ARE</span>
             <h2 className="font-display uppercase text-5xl sm:text-6xl text-[#ffffff] tracking-[1px] text-center mb-6">FIND YOUR NEXT STEP</h2>
             <div className="gold-rule mx-auto my-3 w-28" />
@@ -250,7 +250,7 @@ export default function Home({ setActivePage }: HomeProps) {
       {/* ─── BOOK SHOWCASE ─── */}
       <section className="book-section py-36 bg-[#0a0a06]" id="home-book-feature">
         <div className="container mx-auto px-6">
-          <div className="section-header text-center max-w-3xl mx-auto mb-20 flex flex-col items-center">
+          <div className="section-header text-center max-w-3xl mx-auto mb-20">
             <span className="eyebrow text-[#c8a84b]/60 tracking-[4px] block mb-2 uppercase text-xs">FROM THE TRENCHES</span>
             <h2 className="font-display uppercase text-5xl sm:text-6xl text-[#ffffff] tracking-[1px] text-center mb-4">THE FIRST BOOK</h2>
             <div className="gold-rule mx-auto my-3 w-28" />
@@ -332,7 +332,7 @@ export default function Home({ setActivePage }: HomeProps) {
       {/* ─── RECENT WORDS (BLOG) ─── */}
       <section className="blog-section py-36 bg-[#111108] border-t border-b border-[#c8a84b]/10" id="home-blog">
         <div className="container mx-auto px-6">
-          <div className="section-header text-center max-w-3xl mx-auto mb-20 flex flex-col items-center">
+          <div className="section-header text-center max-w-3xl mx-auto mb-20">
             <span className="eyebrow text-[#c8a84b]/60 tracking-[4px] block mb-2 uppercase text-xs">FROM THE BLOG</span>
             <h2 className="font-display uppercase text-5xl sm:text-6xl text-[#ffffff] tracking-[1px] text-center mb-4">RECENT WORDS</h2>
             <div className="gold-rule mx-auto my-3 w-28" />
@@ -384,7 +384,7 @@ export default function Home({ setActivePage }: HomeProps) {
       {/* ─── NEWSLETTER SIGNUP ─── */}
       <section className="newsletter py-36 bg-[#0a0a06]" id="newsletter-section">
         <div className="container max-w-4xl mx-auto px-6 flex flex-col items-center">
-          <div className="section-header text-center mb-10 flex flex-col items-center">
+          <div className="section-header text-center mb-10">
             <span className="eyebrow text-[#c8a84b]/60 tracking-[4px] block mb-2 uppercase text-xs text-center">JOIN THE MISSION</span>
             <h2 className="font-display uppercase text-4xl sm:text-5xl text-[#ffffff] tracking-[1px] text-center mb-4">STAY ENCOURAGED. STAY EQUIPPED.</h2>
             <div className="gold-rule mx-auto my-3 w-28 animate-pulse" />

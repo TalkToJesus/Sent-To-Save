@@ -226,7 +226,7 @@ export default function Salvation() {
                   initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6 }}
-                  className="border-4 border-double border-[#c8a84b] bg-gradient-to-br from-[#1c1c14] via-[#0f0f08] to-[#1c1c14] p-6 sm:p-10 md:p-12 rounded shadow-2xl relative max-w-4xl mx-auto w-full flex flex-col justify-between min-h-[500px] md:min-h-[560px]"
+                  className="border-4 border-double border-[#c8a84b] bg-gradient-to-br from-[#1c1c14] via-[#0f0f08] to-[#1c1c14] p-5 sm:p-8 md:p-10 rounded shadow-2xl relative max-w-4xl mx-auto w-full flex flex-col justify-between items-center text-center min-h-[500px] md:h-[580px]"
                   id="salvation-covenant-card"
                 >
                   {/* Decorative thin gold inner boundary lines */}
@@ -234,10 +234,10 @@ export default function Salvation() {
                   <div className="absolute top-4 left-4 right-4 bottom-4 border border-[#c8a84b]/5 pointer-events-none" />
 
                   {/* Centered structured layout container */}
-                  <div className="relative z-10 w-full flex flex-col justify-between flex-grow text-center max-w-2xl mx-auto space-y-6">
+                  <div className="relative z-10 w-full flex flex-col justify-between flex-grow text-center max-w-2xl mx-auto space-y-4 md:space-y-5">
                     
                     {/* Top Column: Logo & Titles */}
-                    <div className="flex flex-col items-center space-y-1.5 mt-1">
+                    <div className="flex flex-col items-center space-y-1 mt-1">
                       {/* Sent to Save Logo */}
                       <img
                         src="https://lh3.googleusercontent.com/d/1QjF1MGPQQZc7rp4olum50i8PPQS74XBz"
@@ -251,76 +251,76 @@ export default function Salvation() {
                           }
                         }}
                       />
-                      <span className="font-label text-[9px] sm:text-[10px] tracking-[5px] text-[#c8a84b]/95 uppercase block pt-1">
+                      <span className="font-label text-[8px] sm:text-[9px] tracking-[4px] text-[#c8a84b]/95 uppercase block pt-1">
                         COVENANT OF REDEMPTION
                       </span>
-                      <h4 className="font-display text-2xl sm:text-3xl md:text-4xl tracking-widest text-[#ffffff] uppercase font-black leading-none mt-1">
+                      <h4 className="font-display text-xl sm:text-2xl md:text-3xl tracking-widest text-[#ffffff] uppercase font-black leading-none mt-1">
                         CITIZEN OF HEAVEN
                       </h4>
-                      <p className="text-[9px] sm:text-[10px] text-[#ffffff]/45 uppercase tracking-[2px] font-mono leading-none pt-0.5">
+                      <p className="text-[8px] sm:text-[9px] text-[#ffffff]/45 uppercase tracking-[2px] font-mono leading-none pt-0.5">
                         REGISTRATION NO. • LUKE 10:20
                       </p>
                     </div>
 
                     {/* Middle Column: Covenant Text & Recipient */}
-                    <div className="flex flex-col items-center my-auto py-1">
-                      <div className="w-36 h-px bg-gradient-to-r from-transparent via-[#c8a84b]/40 to-transparent mx-auto mb-3" />
-                      <p className="font-serif italic text-xs sm:text-sm text-[#ffffff]/60 leading-normal">
+                    <div className="flex flex-col items-center py-1">
+                      <div className="w-28 h-px bg-gradient-to-r from-transparent via-[#c8a84b]/40 to-transparent mx-auto mb-2" />
+                      <p className="font-serif italic text-[11px] sm:text-xs text-[#ffffff]/60 leading-normal">
                         This certifies that by Grace through Faith in Jesus Christ,
                       </p>
                       
                       {/* Recipient Name with complete wrap support & precise sizing */}
-                      <div className="w-full max-w-xl mx-auto my-2.5 text-center">
-                        <h5 className="font-serif italic text-2xl sm:text-3xl md:text-4xl lg:text-5xl tracking-wide text-gradient bg-gradient-to-r from-[#e5cf80] via-[#c8a84b] to-[#f5e0a0] bg-clip-text text-transparent font-medium py-1.5 break-all leading-tight border-b border-[#c8a84b]/30">
+                      <div className="w-full max-w-xl mx-auto my-1.5 text-center">
+                        <h5 className="font-serif italic text-xl sm:text-2xl md:text-3xl lg:text-4xl tracking-wide text-gradient bg-gradient-to-r from-[#e5cf80] via-[#c8a84b] to-[#f5e0a0] bg-clip-text text-transparent font-medium py-1 break-words leading-tight border-b border-[#c8a84b]/20">
                           {believerName}
                         </h5>
                       </div>
 
-                      <p className="font-serif italic text-xs sm:text-sm text-[#ffffff]/75 max-w-xl mx-auto leading-relaxed px-2">
+                      <p className="font-serif italic text-[11px] sm:text-xs text-[#ffffff]/75 max-w-xl mx-auto leading-relaxed px-2">
                         has confessed with the mouth that Jesus is Lord, believed in the heart that God raised Him from the dead, and passed from spiritual death into everlasting life — having received salvation, complete remission of sins, and the inheritance of the Kingdom of God.
                       </p>
                     </div>
 
                     {/* Bottom Column: Seal, Witness, Scripture and Actions */}
-                    <div className="w-full space-y-4">
+                    <div className="w-full space-y-3">
                       {/* Dual columns for Seal & Signatures */}
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-center pt-3 border-t border-[#c8a84b]/15 w-full">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 items-center pt-2 border-t border-[#c8a84b]/15 w-full">
                         
                         {/* Left Column: Traditional Gold Seal of Heaven */}
                         <div className="flex flex-col items-center">
                           <div className="relative flex justify-center items-center">
                             {/* Outer serrated golden ring */}
-                            <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#b38f2d] via-[#f5e0a0] to-[#8c671b] flex items-center justify-center shadow-lg border border-[#c8a84b]/50 relative select-none">
+                            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#b38f2d] via-[#f5e0a0] to-[#8c671b] flex items-center justify-center shadow-lg border border-[#c8a84b]/50 relative select-none">
                               <div className="absolute inset-1 rounded-full border border-dashed border-[#0a0a06]/35" />
                               <div className="absolute inset-2 rounded-full border border-[#0a0a06]/10 flex items-center justify-center bg-gradient-to-tr from-[#9c7823] via-[#e5cf80] to-[#805e15]">
-                                <Sparkles className="w-5 h-5 text-[#0a0a06]/85 drop-shadow" />
+                                <Sparkles className="w-4 h-4 text-[#0a0a06]/85 drop-shadow" />
                               </div>
                             </div>
                           </div>
-                          <span className="font-label text-[8px] tracking-[2px] text-[#c8a84b] uppercase font-bold mt-1.5">
+                          <span className="font-label text-[7px] tracking-[1.5px] text-[#c8a84b] uppercase font-bold mt-1">
                             SEAL OF THE COVENANT
                           </span>
                         </div>
 
                         {/* Right Column: Signatures / Date */}
-                        <div className="space-y-2 text-center sm:text-right font-serif text-xs text-[#ffffff]/70 pl-0 sm:pl-4">
+                        <div className="space-y-1.5 text-center sm:text-right font-serif text-[10px] sm:text-xs text-[#ffffff]/70 pl-0 sm:pl-4">
                           <div>
-                            <p className="font-mono text-[8px] text-[#ffffff]/40 uppercase tracking-widest leading-none">DATE OF CONFESSION</p>
-                            <p className="text-xs font-label font-bold text-[#c8a84b] mt-0.5 uppercase tracking-wider">{formattedDate}</p>
+                            <p className="font-mono text-[7px] text-[#ffffff]/40 uppercase tracking-widest leading-none">DATE OF CONFESSION</p>
+                            <p className="text-[10px] font-label font-bold text-[#c8a84b] mt-0.5 uppercase tracking-wider">{formattedDate}</p>
                           </div>
-                          <div className="pt-1">
-                            <p className="font-mono text-[8px] text-[#ffffff]/40 uppercase tracking-widest leading-none">WITNESSED BY</p>
-                            <p className="font-serif italic text-xs text-white/90 mt-0.5">The Holy Spirit</p>
-                            <div className="w-28 h-px bg-[#c8a84b]/30 mt-1 mx-auto sm:mr-0" />
+                          <div className="pt-0.5">
+                            <p className="font-mono text-[7px] text-[#ffffff]/40 uppercase tracking-widest leading-none">WITNESSED BY</p>
+                            <p className="font-serif italic text-[11px] text-white/90 mt-0.5">The Holy Spirit</p>
+                            <div className="w-24 h-px bg-[#c8a84b]/30 mt-0.5 mx-auto sm:mr-0" />
                           </div>
                         </div>
 
                       </div>
 
                       {/* Bottom Scripture Quote Footer */}
-                      <div className="pt-2 border-t border-[#c8a84b]/10 text-[10px] sm:text-[11px] font-serif italic text-slate-400 max-w-lg mx-auto">
+                      <div className="pt-1.5 border-t border-[#c8a84b]/10 text-[9px] sm:text-[10px] font-serif italic text-slate-400 max-w-lg mx-auto">
                         <p className="leading-relaxed">“Yet to all who did receive Him, to those who believed in His name, He gave the right to become children of God.”</p>
-                        <span className="block text-[#c8a84b]/70 mt-0.5 uppercase font-label text-[8px] tracking-[2.5px] font-bold">— John 1:12</span>
+                        <span className="block text-[#c8a84b]/75 mt-0.5 uppercase font-label text-[7px] tracking-[2px] font-bold">— John 1:12</span>
                       </div>
                     </div>
 
